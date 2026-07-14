@@ -1,0 +1,86 @@
+@use '../../mixins';
+
+.overview {
+  padding: 100px 0;
+  background: #000;
+
+  @include mixins.tablet {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    max-width: 816px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: #fff;
+  }
+
+  &__descr {
+    margin-bottom: 80px;
+    max-width: 660px;
+    font-weight: 500;
+    line-height: 150%;
+    color: var(--neutral-color-150);
+
+    @include mixins.tablet {
+      margin-bottom: 60px;
+    }
+
+    @include mixins.small-mobile {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title,
+  &__descr,
+  &__item-title {
+    @include mixins.tablet {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__list {
+    @include mixins.flex-jusify-spb-aic;
+    gap: 56px;
+    flex-wrap: wrap;
+
+    @include mixins.tablet {
+      gap: 40px;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    max-width: 453px;
+
+    &-title {
+      max-width: 262px;
+      font-weight: 600;
+      line-height: 131%;
+      letter-spacing: -0.03em;
+      color: #fff;
+
+      @include mixins.mobile {
+        max-width: 320px;
+      }
+    }
+
+    &-icon,
+    &-title {
+      margin-bottom: 24px;
+
+      @include mixins.tablet {
+        margin-bottom: 18px;
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      line-height: 162%;
+      color: var(--neutral-color-150);
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@use '../../mixins';
+
+.faq {
+  padding: 82px 0 160px;
+  text-align: center;
+
+  @include mixins.mobile{
+    padding: 42px 0 80px;
+  }
+
+  &__container {
+    max-width: 1114px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include mixins.mobile{
+        margin-bottom: 18px;
+      }
+  }
+
+  &__descr {
+    margin-bottom: 80px;
+    font-weight: 500;
+    line-height: 178%;
+    color: var(--neutral-color-150);
+
+    @include mixins.mobile{
+        margin-bottom: 50px;
+      }
+  }
+
+  &__accordion {
+    border-bottom: 1px solid var(--neutral-color-30);
+    padding-bottom: 32px;
+    text-align-last: left;
+
+    @include mixins.mobile{
+        padding-bottom: 12px;
+    }
+
+    
+    &:not(:last-child){
+        margin-bottom: 56px;
+
+        @include mixins.mobile{
+            margin-bottom: 36px;
+        }
+      }
+
+    &[open] &-icon::after{
+        transform: rotate(0);
+    }
+
+    &-text {
+      margin-top: 16px;
+      font-weight: 500;
+      line-height: 178%;
+      color: var(--neutral-color-150);
+
+      @include mixins.mobile{
+        margin-top: 10px;
+      }
+    }
+
+    &-control {
+      @include mixins.flex-jusify-spb-aic;
+      gap: 15px;
+      list-style: none;
+      cursor: pointer;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+    }
+
+    &-title {
+      font-weight: 600;
+      line-height: 150%;
+      color: var(--neutral-color-100);
+    }
+/* stylelint-disable no-descending-specificity */
+    &-icon{
+        position: relative;
+        width: 24px;
+        height: 24px;
+        
+        &::after{
+            transform: rotate(90deg);
+        }
+        
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            border-radius: 6px;
+            width: 18px;
+            height: 3px;
+            background-color: var(--neutral-color-100);
+        }
+    }
+  }
+}

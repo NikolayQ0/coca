@@ -1,0 +1,149 @@
+@use '../../mixins';
+
+.hero {
+  padding: 95px 0 168px;
+
+  &__container{
+    overflow-x: visible;
+  }
+
+  @include mixins.mobile {
+    padding: 47px 0 84px;
+  }
+
+  &__head {
+    &-title {
+      margin-bottom: 53px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--neutral-color-100);
+
+      @include mixins.mobile {
+        margin-bottom: 25px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 128px;
+      max-width: 754px;
+      font-weight: 600;
+      line-height: 131%;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+
+      @include mixins.tablet{
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__slider-sections {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 90px;
+
+    @include mixins.tablet {
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include mixins.small-mobile{
+        margin-bottom: 45px;
+    }
+  }
+
+  &__section-btn {
+    border-bottom: 1px solid transparent;
+    font-weight: 600;
+    line-height: 150%;
+    color: var(--neutral-color-150);
+    transition: var(--transition);
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 1px solid var(--neutral-color-100);
+      color: var(--neutral-color-100);
+    }
+
+    &--active {
+      border-bottom: 1px solid var(--neutral-color-100);
+      color: var(--neutral-color-100);
+    }
+  }
+
+  &__slider-container {
+    position: relative;
+  }
+
+  &__slider-wrapper {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__swiper {
+    &-btns {
+      @include mixins.flex-all-center;
+      position: absolute;
+      top: 150px;
+      left: 39.7%;
+      z-index: var(--z-index-2);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      transform: translateX(-50%);
+
+      @include mixins.tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__article {
+    max-width: 515px;
+
+    &-img {
+      margin-bottom: 16px;
+    }
+
+    &-info {
+      @include mixins.flex-jusify-spb;
+      margin-bottom: 24px;
+      font-weight: 400;
+      line-height: 150%;
+      color: var(--neutral-color-150);
+
+      @include mixins.small-mobile {
+        flex-direction: column;
+        margin-bottom: 12px;
+      }
+
+      &-author {
+        font-style: normal;
+      }
+    }
+
+    &-title {
+      margin-bottom: 16px;
+      max-width: 405px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+
+      @include mixins.small-mobile {
+        margin-bottom: 8px;
+      }
+    }
+
+    &-descr {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: var(--neutral-color-150);
+    }
+  }
+}

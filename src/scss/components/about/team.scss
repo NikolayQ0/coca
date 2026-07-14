@@ -1,0 +1,148 @@
+@use '../../mixins';
+
+.team {
+  margin-bottom: 165px;
+
+  @include mixins.mobile{
+    margin-bottom: 80px;
+  }
+
+  &__head {
+    margin-bottom: 80px;
+
+    @include mixins.mobile{
+        margin-bottom: 40px;
+      }
+
+    &-title {
+      margin-bottom: 24px;
+      max-width: 725px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--neutral-color-100);
+    }
+
+    &-descr {
+      margin-bottom: 80px;
+      max-width: 524px;
+      font-weight: 500;
+      line-height: 178%;
+      color: var(--neutral-color-150);
+    }
+  }
+
+  &__slider {
+    position: relative;
+    margin-bottom: 100px;
+
+    &-btns {
+      @include mixins.flex-all-center;
+      position: absolute;
+      top: 196px;
+      left: 32.8%;
+      z-index: var(--z-index-2);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      transform: translateX(-50%);
+
+      @include mixins.tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__article {
+    max-width: 379px;
+
+    &-img {
+      margin-bottom: 16px;
+
+      @include mixins.small-tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &-bottom {
+      @include mixins.flex-jusify-spb;
+
+      @include mixins.small-tablet {
+        gap: 6px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      &-text {
+        &-author {
+          margin-bottom: 8px;
+          font-weight: 600;
+          line-height: 150%;
+          color: var(--neutral-color-100);
+        }
+
+        &-position {
+          font-weight: 500;
+          line-height: 150%;
+          color: var(--neutral-color-150);
+        }
+      }
+
+      &-socials {
+        display: flex;
+        gap: 8px;
+
+        @include mixins.small-tablet {
+          margin-top: 10px;
+        }
+
+        &-link {
+          & svg {
+            & path {
+              fill: var(--neutral-color-90);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include mixins.flex-jusify-spb-aic;
+    gap: 20px;
+
+    @include mixins.mini-desctop{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    &-title {
+      max-width: 626px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--neutral-color-100);
+    }
+
+    &-right {
+      max-width: 506px;
+
+      @include mixins.mini-desctop{
+        max-width: 806px;
+      }
+
+      &-descr {
+        margin-bottom: 24px;
+        font-weight: 500;
+        line-height: 178%;
+        color: var(--neutral-color-150);
+      }
+
+      &-link {
+        font-weight: 600;
+        line-height: 150%;
+        color: var(--neutral-color-100);
+      }
+    }
+  }
+}
