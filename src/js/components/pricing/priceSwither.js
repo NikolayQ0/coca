@@ -4,7 +4,6 @@ export const usePriceSwitcher = () => {
   const popularPrice = document.querySelector('[data-price="popular"]');
   const enterprisePrice = document.querySelector('[data-price="enterprise"]');
 
-
   if (!starterPrice || !popularPrice || !enterprisePrice) {
     console.warn('Не все элементы найдены для price switcher');
     return;

@@ -10,10 +10,10 @@ export const useArticlesSlider = () => {
     loop: true,
     centeredSlides: true,
     381: {
-        slidesPerView: 1.2,
+      slidesPerView: 1.2,
     },
     577: {
-        slidesPerView: 2.2,
+      slidesPerView: 2.2,
     },
     breakpoints: {
       993: {

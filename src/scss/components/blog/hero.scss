@@ -95,7 +95,20 @@
       width: 80px;
       height: 80px;
       background-color: #fff;
+      opacity: 0.8;
       transform: translateX(-50%);
+      transition: opacity var(--transition), transform var(--transition);
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.04);
+      }
+
+      &.is-disabled {
+        opacity: 0.4;
+        pointer-events: none;
+      }
 
       @include mixins.tablet {
         display: none;
