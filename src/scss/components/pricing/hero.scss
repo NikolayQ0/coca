@@ -126,7 +126,7 @@
 
     &--popular {
       border: 1px solid var(--primary-color-30);
-      background: var(--neutral-color-90);
+      background: #161a34;
       transform: translateY(-76px);
 
       @include mixins.tablet{
@@ -255,7 +255,7 @@
 
       &--popular{
         color: #1d1e25;
-        background-color: #fff;
+        background-color: var(--neutral-color-10);
       }
 
       &:hover {

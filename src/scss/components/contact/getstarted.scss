@@ -62,14 +62,14 @@
       font-weight: 600;
       line-height: 122%;
       letter-spacing: -0.02em;
-      color: #1d1e25;
+      color: var(--neutral-color-60);
     }
 
     &-text {
       margin-bottom: 48px;
       font-weight: 400;
       line-height: 167%;
-      color: var(--neutral-color-150);
+      color: #1d1e25;
     }
 
     &-link {
@@ -98,7 +98,7 @@
         margin-bottom: 6px;
         font-weight: 500;
         line-height: 143%;
-        color: var(--neutral-color-100);
+        color: #1d1e25;
       }
     }
 

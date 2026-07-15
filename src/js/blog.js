@@ -6,9 +6,11 @@ import { useBurger } from './components/burger.js';
 import { useSliderSections } from './components/blog/slider.js';
 import { useBlogHeroSlider } from './components/blog/slider.js';
 import { useArticlesSlider } from './components/blog/articles.js';
+import { initFooterAccordion } from './components/home/accordeon.js';
 
 useTheme();
 useBurger();
 useSliderSections();
 useBlogHeroSlider();
 useArticlesSlider();
+initFooterAccordion();

@@ -46,6 +46,12 @@
 &__slider{
     position: relative;
 
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
 &-btns{
     @include mixins.flex-all-center;
     position: absolute;
@@ -56,7 +62,20 @@
     width: 80px;
     height: 80px;
     background-color:#fff;
+    opacity: 0.8;
     transform: translateX(-50%);
+    transition: opacity var(--transition), transform var(--transition);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.04);
+    }
+
+    &.is-disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
 
     @include mixins.tablet{
         display: none;
@@ -74,6 +93,8 @@
 }
 
   &__article {
+    flex-shrink: 0;
+    width: auto;
     max-width: 582px;
 
     @include mixins.mini-desctop{
@@ -85,7 +106,12 @@
     }
 
     &-img {
+      display: block;
       margin-bottom: 16px;
+      width: 100%;
+      height: 332px;
+      object-fit: cover;
+      object-position: center;
     }
 
     &-head {
